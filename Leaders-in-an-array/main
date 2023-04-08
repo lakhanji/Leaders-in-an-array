@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution{
+    
+    public:
+    vector<int> leaders(int a[], int n){
+        vector<int> v;
+        int cl = a[n-1];
+        v.push_back(cl);
+        
+        for(int i=n-2;i>=0;i--){
+            if(cl<=a[i]){
+                cl = a[i];
+                v.push_back(cl);
+            }
+            
+        }
+        reverse(v.begin(), v.end());
+        return v;
+    }
+};
+
+int main(){
+
+int t;
+  cin>>t;
+  while(t--){
+    long long n;
+    cin>>n;
+    int a[n];
+    for(long long i=0;i<n;i++){
+      cin>>a[i];}
+  solution ob;
+  vector<int> v = ob.leaders(a,n);
+  for(auto it=v.begin();it!=v.end();i++)
+    cout<<*it<<" ";
+cout<<endl;
+  }
+  return 0;
